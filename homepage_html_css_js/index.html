@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Catalog</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <h1>📚 Book Catalog</h1>
+    <div class="nav-right">
+      <button id="add-book">Add Book</button>
+      <img src="./pics/user profile pic.jpg" alt="User" id="user-icon" />
+    </div>
+  </nav>
+
+  <div class="user-popup hidden" id="user-popup">
+    <h2>User Details</h2>
+    <p><strong>Name:</strong> John Doe</p>
+    <p><strong>Email:</strong> john@example.com</p>
+    <button class="update">Update</button>
+    <button class="delete">Delete</button>
+  </div>
+
+  <main>
+    <section id="book-collection">
+      <h2>Your Books</h2>
+      <div id="books-container"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
