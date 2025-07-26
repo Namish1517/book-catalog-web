@@ -10,7 +10,7 @@ import AddBook from "./Components/AddBook";
 import BooksDashboard from './pages/BooksDashboard';
 import BookDetails from './pages/BookDetails.jsx';
 import EditBook from './pages/EditBook.jsx'
-
+import ProfilePage from './pages/ProfilePage.jsx';
 
 export default function App() {
   return (
@@ -222,6 +222,7 @@ export default function App() {
 <Route path="/books" element={<BooksDashboard />} />
 <Route path="/books/:id" element={<BookDetails />} /> 
     <Route path="/edit-book/:id" element={<EditBook />} />
+    <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>
     </Router>

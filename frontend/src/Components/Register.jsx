@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
+
 function RegisterPage({ onClose }) {
   const navigate = useNavigate();
 
@@ -68,7 +69,8 @@ const handleClose = () => {
 
         console.log('User registered:', data);
         // TODO: Save the user token (data.token) and redirect
-        navigate('/home');
+        localStorage.setItem('userInfo', JSON.stringify(data));
+        navigate('/books');
 
     } catch (error) {
         console.error(error);

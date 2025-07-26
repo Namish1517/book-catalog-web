@@ -1,5 +1,6 @@
 import User from '../models/userModel.js';
 import jwt from 'jsonwebtoken';
+import Book from '../models/bookModel.js';
 
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
@@ -52,6 +53,24 @@ export const loginUser = async (req, res) => {
       });
     } else {
       res.status(401).json({ message: 'Invalid email or password' });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user._id);
+
+    if (user) {
+      // Optional: Decide if you want to delete all books added by this user.
+      // await Book.deleteMany({ user: user._id });
+
+      await User.deleteOne({ _id: req.user._id });
+      res.json({ message: 'User deleted successfully' });
+    } else {
+      res.status(404).json({ message: 'User not found' });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });

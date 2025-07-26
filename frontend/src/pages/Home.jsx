@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Footer from '../Components/Footer';
 
 export default function Home() {
-  return (<div classname="w-screen">
+  return (<div className="w-screen">
     <div className="flex flex-col min-h-screen text-[#00272B]">
       {/* Full-width Fixed Navbar */}
       <nav className="w-full bg-[#457B9D] text-white shadow-md py-5 px-6 flex items-center justify-between fixed top-0 left-0 z-50">
@@ -11,7 +11,7 @@ export default function Home() {
           <div className="text-2xl font-bold">BookCatalog</div>
 
           {/* Home (highlighted) */}
-          <span className="text-[#C7F0BD] font-semibold">Home</span>
+          
 
            <Link to="/home" className="text-white font-semibold transition hover:text-[#C7F0BD]">Home</Link>
         
@@ -23,7 +23,7 @@ export default function Home() {
 
           {/* Profile */}
 
-          <Link to="/update-profile" className="text-white font-semibold transition hover:text-[#C7F0BD]">
+          <Link to="/profile" className="text-white font-semibold transition hover:text-[#C7F0BD]">
             Profile
           </Link>
           
